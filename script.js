@@ -53,8 +53,8 @@ class CalculatorDisplay extends React.Component {
     if (match)
     formattedValue += /[1-9]/.test(match[0]) ? match[1] : match[0];
 
-    return /*#__PURE__*/(
-      React.createElement("div", _extends({}, props, { className: "calculator-display" }), /*#__PURE__*/
+    return(
+      React.createElement("div", _extends({}, props, { className: "calculator-display" }), 
       React.createElement(AutoScalingText, null, formattedValue)));
 
 
@@ -65,8 +65,8 @@ class CalculatorKey extends React.Component {
   render() {
     const { onPress, className, ...props } = this.props;
 
-    return /*#__PURE__*/(
-      React.createElement(PointTarget, { onPoint: onPress }, /*#__PURE__*/
+    return(
+      React.createElement(PointTarget, { onPoint: onPress }, 
       React.createElement("button", _extends({ className: `calculator-key ${className}` }, props))));
 
 
@@ -134,35 +134,35 @@ class Calculator extends React.Component {constructor(...args) {super(...args);_
     const clearDisplay = displayValue !== '0';
     const clearText = clearDisplay ? 'C' : 'AC';
 
-    return /*#__PURE__*/(
-      React.createElement("div", { className: "calculator" }, /*#__PURE__*/
-      React.createElement(CalculatorDisplay, { value: displayValue }), /*#__PURE__*/
-      React.createElement("div", { className: "calculator-keypad" }, /*#__PURE__*/
-      React.createElement("div", { className: "input-keys" }, /*#__PURE__*/
-      React.createElement("div", { className: "function-keys" }, /*#__PURE__*/
-      React.createElement(CalculatorKey, { className: "key-clear", onPress: () => clearDisplay ? this.clearDisplay() : this.clearAll() }, clearText), /*#__PURE__*/
-      React.createElement(CalculatorKey, { className: "key-sign", onPress: () => this.toggleSign() }, "\xB1"), /*#__PURE__*/
-      React.createElement(CalculatorKey, { className: "key-percent", onPress: () => this.inputPercent() }, "%")), /*#__PURE__*/
+    return(
+      React.createElement("div", { className: "calculator" }, 
+      React.createElement(CalculatorDisplay, { value: displayValue }), 
+      React.createElement("div", { className: "calculator-keypad" },
+      React.createElement("div", { className: "input-keys" }, 
+      React.createElement("div", { className: "function-keys" }, 
+      React.createElement(CalculatorKey, { className: "key-clear", onPress: () => clearDisplay ? this.clearDisplay() : this.clearAll() }, clearText),
+      React.createElement(CalculatorKey, { className: "key-sign", onPress: () => this.toggleSign() }, "\xB1"), 
+      React.createElement(CalculatorKey, { className: "key-percent", onPress: () => this.inputPercent() }, "%")),
 
-      React.createElement("div", { className: "digit-keys" }, /*#__PURE__*/
-      React.createElement(CalculatorKey, { className: "key-0", onPress: () => this.inputDigit(0) }, "0"), /*#__PURE__*/
-      React.createElement(CalculatorKey, { className: "key-dot", onPress: () => this.inputDot() }, "\u25CF"), /*#__PURE__*/
-      React.createElement(CalculatorKey, { className: "key-1", onPress: () => this.inputDigit(1) }, "1"), /*#__PURE__*/
-      React.createElement(CalculatorKey, { className: "key-2", onPress: () => this.inputDigit(2) }, "2"), /*#__PURE__*/
-      React.createElement(CalculatorKey, { className: "key-3", onPress: () => this.inputDigit(3) }, "3"), /*#__PURE__*/
-      React.createElement(CalculatorKey, { className: "key-4", onPress: () => this.inputDigit(4) }, "4"), /*#__PURE__*/
-      React.createElement(CalculatorKey, { className: "key-5", onPress: () => this.inputDigit(5) }, "5"), /*#__PURE__*/
-      React.createElement(CalculatorKey, { className: "key-6", onPress: () => this.inputDigit(6) }, "6"), /*#__PURE__*/
-      React.createElement(CalculatorKey, { className: "key-7", onPress: () => this.inputDigit(7) }, "7"), /*#__PURE__*/
-      React.createElement(CalculatorKey, { className: "key-8", onPress: () => this.inputDigit(8) }, "8"), /*#__PURE__*/
-      React.createElement(CalculatorKey, { className: "key-9", onPress: () => this.inputDigit(9) }, "9"))), /*#__PURE__*/
+      React.createElement("div", { className: "digit-keys" }, 
+      React.createElement(CalculatorKey, { className: "key-0", onPress: () => this.inputDigit(0) }, "0"), 
+      React.createElement(CalculatorKey, { className: "key-dot", onPress: () => this.inputDot() }, "\u25CF"), 
+      React.createElement(CalculatorKey, { className: "key-1", onPress: () => this.inputDigit(1) }, "1"), 
+      React.createElement(CalculatorKey, { className: "key-2", onPress: () => this.inputDigit(2) }, "2"), 
+      React.createElement(CalculatorKey, { className: "key-3", onPress: () => this.inputDigit(3) }, "3"), 
+      React.createElement(CalculatorKey, { className: "key-4", onPress: () => this.inputDigit(4) }, "4"), 
+      React.createElement(CalculatorKey, { className: "key-5", onPress: () => this.inputDigit(5) }, "5"), 
+      React.createElement(CalculatorKey, { className: "key-6", onPress: () => this.inputDigit(6) }, "6"), 
+      React.createElement(CalculatorKey, { className: "key-7", onPress: () => this.inputDigit(7) }, "7"), 
+      React.createElement(CalculatorKey, { className: "key-8", onPress: () => this.inputDigit(8) }, "8"), 
+      React.createElement(CalculatorKey, { className: "key-9", onPress: () => this.inputDigit(9) }, "9"))), 
 
 
-      React.createElement("div", { className: "operator-keys" }, /*#__PURE__*/
-      React.createElement(CalculatorKey, { className: "key-divide", onPress: () => this.performOperation('/') }, "\xF7"), /*#__PURE__*/
-      React.createElement(CalculatorKey, { className: "key-multiply", onPress: () => this.performOperation('*') }, "\xD7"), /*#__PURE__*/
-      React.createElement(CalculatorKey, { className: "key-subtract", onPress: () => this.performOperation('-') }, "\u2212"), /*#__PURE__*/
-      React.createElement(CalculatorKey, { className: "key-add", onPress: () => this.performOperation('+') }, "+"), /*#__PURE__*/
+      React.createElement("div", { className: "operator-keys" }, 
+      React.createElement(CalculatorKey, { className: "key-divide", onPress: () => this.performOperation('/') }, "\xF7"), 
+      React.createElement(CalculatorKey, { className: "key-multiply", onPress: () => this.performOperation('*') }, "\xD7"), 
+      React.createElement(CalculatorKey, { className: "key-subtract", onPress: () => this.performOperation('-') }, "\u2212"), 
+      React.createElement(CalculatorKey, { className: "key-add", onPress: () => this.performOperation('+') }, "+"), 
       React.createElement(CalculatorKey, { className: "key-equals", onPress: () => this.performOperation('=') }, "=")))));
 
 
